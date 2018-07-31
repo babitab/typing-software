@@ -1,0 +1,11 @@
+body {
+	background: whitesmoke;
+	margin: 0;
+	padding-top: .1px;
+	padding-bottom: .1px;
+}
+
+table {
+	border-collapse: collapse;
+	text-align: left;
+}

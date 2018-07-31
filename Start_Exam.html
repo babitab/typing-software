@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Start Exam 
+	</title>
+</head>
+<body>
+	<a href="./index.html">back</a>
+<h1>Typing Test Setting Screen</h1>
+   <form action="index.html" method="get">
+   	<section>
+	   	<h1>Typing Test Language</h1>
+		<label><input type="radio" required name="selectedLanguage" value="Hindi" checked> Hindi</label><br>
+		<label><input type="radio" required name="selectedLanguage" value="English"> English</label><br>
+		<label><input type="radio" required name="selectedLanguage" value="Both">Both Hindi and English</label><br>
+   	</section>
+	<section>
+		<h1>Exam  Duration</h1>
+		<label>Hindi Typing <input type="number" required placeholder="15" value="15" name="hindiTypingDuration"></label>min<br>
+		<label>English Typing <input type="number" required placeholder="15" value="15" name="englishTypingDuration"></label>min
+	</section>
+   	<h1>Select Exercise</h1>
+   	<table border = "1">
+   		<tr>
+   		<th>Hindi</th>
+   		<th>English</th>
+        </tr>
+   		<tr>
+   			<td colspan="2"> <label><input required type="radio" value="1" checked name="selectedExercise"> 1</label></td>
+   		</tr>
+   		<tr>
+   			<td colspan="2"> <label><input required type="radio" value="2" name="selectedExercise"> 2</label></td>
+   		</tr>
+   		<tr>
+   			<td colspan="2"> <label><input required type="radio" value="3" name="selectedExercise"> 3</label></td>
+   		</tr>
+   	</table>
+   	<button type="submit">Start Exam Now</button>
+   </form>
+</body>
+</html>

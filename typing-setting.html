@@ -2,71 +2,61 @@
 <html>
 <head>
 	<title>typing custom settings</title>
+	<link rel="stylesheet" type="text/css" href="app.css">
 </head>
 <body>
-<h1>Typing Exam Software</h1>
-<h2>Informatics Assistant Recruitment 2018</h2>
-<table border = "1">
-	<thead>
-		<th colspan = "2">Candidate Details 
-		</th>
-		<tr>
-			<td>Roll no</td>
-			<td> : 101</td>			
-		</tr>
-			<tr> 
-				<td>Name</td>
-				<td> : Babita</td>
-			</tr>
-			<tr> 
-				<td>Father Name</td>
-				<td> : Bhanwar Singh</td>
-			</tr>
-			<tr> 
-				<td>Date Of Birth</td>
-				<td> : 09-12-1994</td>
-			</tr>
-
-			 <thead>
-			 	<th colspan="2">Exam Details</th>
-			 	<tr>
-			 		<td>Exam Name</td>
-			 		<td>Infortics Assistant Recruitment</td>
-			 	</tr>
-			 	<tr>
-			 		<td>Test Center</td>
-			 		<td>New Center</td>
-			 	</tr>
-			 	<tr>
-			 		<td>Test Lab</td>
-			 		<td>Computer Lab</td>
-			 	</tr>
-			 	<thead>
-			 		<th colspan="2">Exam Duration</th>
-			 		<tr>
-			 			<td>Hindi Typing Speed</td>
-			 			<td>15 Minutes</td>
-			 		</tr>
-			 		<tr>
-			 			<td>English Typing Speed</td>
-			 			<td>15 Minutes</td>
-			 		</tr>
-			 	</thead>
-		</table>
-			 	
-   <section>
-   	<h1>Typing Test Language</h1>
-   	<form>
-  <input type="radio" name="text" value="Hindi" checked> Hindi<br>
-  <input type="radio" name="text" value="English"> English<br>
-  <input type="radio" name="text" value="Both Hindi and English">Both Hindi and English<br>
-  <h2>Disable Backspace Use</h2>
-   <input type="checkbox" name="#" value="Bike"> Disable Backspace use<br>
-   <a href="./index.html">Done</a>
-</form> 
-
-   </section>
-			
-
+	<h1 class="text-center text-blue m-0 bg-orange p-10">Typing Exam Software</h1>
+	<div class="p-10">
+		<form action="./index.html" method="GET" class="settings-form bg-white p-30 rounded">
+			<div class="d-flex justify-content-between">
+				<label class="profile-change">
+					<input type="file" name="profileImage" />
+					<img src="./user-img.png">
+				</label>
+			</div>
+			<section class="form-group">
+				<label>Roll No.</label>
+				<input type="number" name="rollNumber" placeholder="12734" required />
+			</section>
+			<section class="form-group">
+				<label>Name</label>
+				<input type="text" name="name" placeholder="First Last Name" required />
+			</section>
+			<section class="form-group">
+				<label>Father's Name</label>
+				<input type="text" name="fatherName" placeholder="First Last Name" />
+			</section>
+			<section class="form-group">
+				<label>Date of Birth</label>
+				<input type="date" name="dob" />
+			</section>
+		   	<section class="form-group">
+		   		<label>Exam  Duration</label>
+		   		<label class="d-block">Hindi Typing(min) <input type="number" required placeholder="15" name="hindiTypingDuration"></label>
+		   		<label class="d-block">English Typing(min) <input type="number" required placeholder="15" name="englishTypingDuration"></label>
+		   	</section>
+			<section>
+				<div class="form-group">
+					<label>Typing Test Language</label>
+					<div class="d-flex">
+						<label>
+							<input type="radio" name="language" value="Hindi" checked> Hindi
+						</label>
+						<label class="ml-5">
+							<input type="radio" name="language" value="English"> English
+						</label>
+						<label class="ml-5">
+							<input type="radio" name="language" value="Both">Both Hindi and English
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<h4 class="ttl-heading">Disable Backspace Use</h4>
+					<input type="checkbox" name="disableBackSpace" value="1"> Disable Backspace use<br>
+				</div>
+			</section>
+			<button type="submit" class="btn">Done</button>
+		</form> 
+	</div>
 </body>
 </html>

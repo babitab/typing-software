@@ -2,55 +2,82 @@
 <html>
 <head>
 	<title> Informatic Assistant Exam</title>
+	<link rel="stylesheet" type="text/css" href="app.css">
 </head>
-<body>
-<h1> Typing Test Exam </h1>
-<table border = "1">
-	<thead>
-		<th colspan = "2">Candidate Details 
-		</th>
-		<tr>
-			<td>Roll no</td>
-			<td> : 101</td>
-		</tr>
-			<tr> 
-				<td>Name</td>
-				<td> : Babita</td>
-			</tr>
-			<tr>
-				<td>Date Of Birth</td>
-				<td> : 09-12-1994</td>
-			</tr>
-			<tr>
-				<td>Exam Date</td>
-				<td> : 15-8-2018</td>
-			</tr>
-			<tr>
-				<td>Exam Time</td>
-				<td> : 11:00</td>
-			</tr>
-		
-	</thead>
-	<thead>
-		<th colspan = "2">Section Details 
-		</th>
-		<tr><td>Hindi typing speed</td>
-			<td>15 Minutes </td></tr>
-		<tr>
-			<td>English typing speed</td>
-			<td>15 minutes</td>
-		</tr>
+<body>	
+	<h1 class="text-center text-blue m-0 bg-orange p-10">Typing Test Exam </h1>
+	<div class="main-container">
+		<div class="d-flex justify-content-between">
+			<div class="profile-image p-10">
+				<img src="./user-img.png">
+			</div>
+			<div class="text-center">
+				<h2 class="bg-teal text-white m-0 p-10">Typing Test Exam</h2>
+				<h1 class="text-red m-0" style="font-size: 40px; padding: 5px">00:15:00</h1>
+                <label class="bg-teal text-white p-10">
+                	Exam Time Left
+                </label>
 
-	</thead>
-</table> 
-<section>
-	<label for="read_line">Read Line No</label>
-	<input type="#" id="read_line" />
-</section>
-	<section><label>Type Line No</label>
-	<input type="#" name="" />
-</section>
-<a href="typing-setting.html"> Custom settings</a>&nbsp;&nbsp;
-<a href="Start_Exam.html">Start Exam Now</a>
+			</div>
+
+			<div class="p-10">
+				<table id="details" class="details">
+					<thead>
+						<tr>
+							<th colspan = "2">Candidate Details </th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Roll no</td>
+							<td> : 101</td>
+						</tr>
+						<tr> 
+							<td>Name</td>
+							<td> : Babita</td>
+						</tr>
+						<tr>
+							<td>Date Of Birth</td>
+							<td> : 09-12-1994</td>
+						</tr>
+						<tr>
+							<td>Exam Date</td>
+							<td> : 15-8-2018</td>
+						</tr>
+						<tr>
+							<td>Exam Time</td>
+							<td> : 11:00</td>
+						</tr>
+					</tbody>
+					<thead>
+						<tr>
+							<th colspan = "2">Section Details </th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Hindi typing speed</td>
+							<td>15 Minutes </td>
+						</tr>
+						<tr>
+							<td>English typing speed</td>
+							<td>15 minutes</td>
+						</tr>
+					</tbody>
+				</table> 
+				
+			</div>
+		</div>
+		<section class="p-10">
+			<label for="read_line">Read Line No</label>
+			<input type="text" id="read_line" class="d-block w-100" />
+			<label for="type_line">Type Line No</label>
+			<input type="text" id="type_line" class="d-block w-100" />
+		</section>
+		<section>
+			<a href="typing-setting.html" class="btn"> Settings</a>&nbsp;&nbsp;
+			<a href="Start_Exam.html" class="btn">Start Exam Now</a>
+		</section>
+	</div>
 </body>
 </html>

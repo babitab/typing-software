@@ -48,7 +48,6 @@ input, textarea, select, button {
 .text-center {
 	text-align: center;
 }
-
 .text-blue {
 	color: blue;
 }
@@ -88,6 +87,9 @@ input, textarea, select, button {
 .mb-15 {
 	margin-bottom: 15px;
 }
+.mu-10{
+	margin-top: 10px;
+}
 .p-10 {
 	padding: 10px;
 }
@@ -114,6 +116,9 @@ input, textarea, select, button {
 .w-100 {
 	width: 100%;
 }
+.float-right {
+	float: right;
+}
 
 /* components */
 .btn {
@@ -134,6 +139,31 @@ input, textarea, select, button {
 
 .form-group {
 	margin-bottom: 15px;
+}
+
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	display: none;
+}
+
+.popup__backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.2);
+	z-index: -1;
+}
+
+.popup__content {
+	position: relative;
+	padding: 30px;
 }
 
 /* custom styles */
@@ -188,6 +218,7 @@ input, textarea, select, button {
 	border-radius: 50%;
 	transition: box-shadow .15s linear;
 	box-shadow: 0 1px 3px rgba(0,0,0,.2);
+	cursor: pointer;
 }
 .profile-change img:hover {
 	box-shadow: 0 1px 5px rgba(0,0,0,.5);
@@ -201,13 +232,30 @@ input, textarea, select, button {
 .profile-change input[type="file"]:focus + img {
 	box-shadow: 0 2px 10px rgba(0,0,0,.5);
 }
+.profile-image {
+	text-align: center;
+}
 .profile-image img{
 	width: 200px;
 	height: 200px;
 	border-radius: 50%;
 
 }
+.address{
+	max-width: 400px;
+	margin: 20px auto;
+    font-size: 30px;
+    text-align: center;
+    border: 1px solid skyblue;
 
-
-
-
+}
+.Name{
+	color: black;
+	font-size: 20px;
+	padding: 5px;
+	text-align: center;
+}
+.name{
+	color: black;
+	font-size: 20px;
+}

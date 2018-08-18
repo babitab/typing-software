@@ -14,7 +14,7 @@
 			</div>
 			<div class="text-center">
 				<h2 class="bg-teal text-white m-0 p-10">Typing Test Exam</h2>
-				<h1 class="text-red m-0" style="font-size: 40px; padding: 5px">00:15:00</h1>
+				<h1 class="text-red m-0" style="font-size: 40px; padding: 5px" id="timeDuration">00:15:00</h1>
                 <label class="bg-teal text-white p-10">
                 	Exam Time Left
                 </label>
@@ -71,9 +71,10 @@
 		</div>
 		<section class="p-10">
 			<label for="read_line">Read Line No</label>
-			<input type="text" id="read_line" class="d-block w-100" />
+			<input type="text" id="read_line" class="d-block w-100" value="babita mith." readonly  />
 			<label for="type_line">Type Line No</label>
-			<input type="text" id="type_line" class="d-block w-100" />
+			<input type="text" id="type_line" class="d-block w-100"  />
+			<div id="errormessage"></div>
 		</section>
 		<section>
 			<button  class="btn js-togglePopup" data-target="popup2">Settings</button>&nbsp;&nbsp;
@@ -115,13 +116,13 @@
 		      		<th>English</th>
 		           </tr>
 		      		<tr>
-		      			<td colspan="2"> <label><input required type="radio" value="1" checked name="selectedExercise"> 1</label></td>
+		      			<td colspan="2"> <label><input required type="radio" value="This is something about the data" checked name="selectedExercise"> 1</label></td>
 		      		</tr>
 		      		<tr>
-		      			<td colspan="2"> <label><input required type="radio" value="2" name="selectedExercise"> 2</label></td>
+		      			<td colspan="2"> <label><input required type="radio" value="And dome data to be written" name="selectedExercise"> 2</label></td>
 		      		</tr>
 		      		<tr>
-		      			<td colspan="2"> <label><input required type="radio" value="3" name="selectedExercise"> 3</label></td>
+		      			<td colspan="2"> <label><input required type="radio" value="here is something for you to type3" name="selectedExercise"> 3</label></td>
 		      		</tr>
 		      	</table>
 		      	<button type="submit" class="btn mu-10 js-togglePopup" data-target="popup1">Start Exam Now</button>
@@ -132,10 +133,10 @@
    		<div class="popup" id="popup2">
     		<div class="popup__backdrop js-backdrop"></div>
     		<div class="popup__content">
-    			<button class="float-right rounded bg-white js-togglePopup" type="button" data-target="popup2">&times;</button>
-				<h1 class="text-center text-blue m-0 bg-orange p-10">Typing Exam Software</h1>
+    			
 				<div class="p-10">
 					<form action="./index.html" method="GET" class="settings-form bg-white p-30 rounded">
+						<button class="float-right rounded bg-white js-togglePopup" type="button" data-target="popup2">&times;</button>
 						<div class="d-flex justify-content-between">
 							<label class="profile-change">
 								<input type="file" name="profileImage" />
@@ -191,10 +192,25 @@
  	<script>
 		function togglePopup (event) {
 			// get the id of the popup
-			var id = event.target.getAttribute("data-target")
-			var popup = document.getElementById(id)
+			var id = event.target.getAttribute("data-target");
+			var popup = document.getElementById(id);
 			popup.style.display = popup.style.display === "block" ? "none" : "block";
-			document.body.style.overflow = document.body.style.overflow === "hidden" ? "auto" : "hidden"
+			document.body.style.overflow = document.body.style.overflow === "hidden" ? "auto" : "hidden";
+		}
+		function startTime (duration, cb) {
+			duration = duration * 60;
+			document.getElementById("timeDuration").innerText = "00:" + Math.floor(duration/60) + ":" + duration % 60
+			var token = setInterval(function () {
+				duration--;
+				document.getElementById("timeDuration").innerText = "00:" + Math.floor(duration/60) + ":" + duration % 60
+				if (duration === 0) {
+					clearInterval(token);
+					alert("You time is over.");
+					if (cb) {
+						cb();
+					}
+				}
+			}, 1000)
 		}
 		// get the popup togglers: array of toggler
 		var popupTogglers = document.getElementsByClassName("js-togglePopup");
@@ -203,7 +219,45 @@
 			var popupToggler = popupTogglers[i]
 			popupToggler.addEventListener("click", togglePopup)
 		}
+		var  readline = document.getElementById("read_line"), typeline = document.getElementById("type_line");
+		const queryParams = location.search.substring(1).split("&").map(function map(v) { return v.split("=") }).reduce(function reduce(retValue, arr) { retValue[decodeURIComponent(arr[0])] = decodeURIComponent(arr[1]); return retValue; }, {});
+		if (queryParams.selectedExercise) {
+			readline.value = queryParams.selectedExercise.replace(/\+/g, " ")
+		}
+		if (queryParams.selectedLanguage == "Hindi") {
+			startTime(queryParams.hindiTypingDuration);
+			
+		}
+		if (queryParams.selectedLanguage == "English") {
+			startTime(queryParams.englishTypingDuration)
+		}
+		if (queryParams.selectedLanguage == "Both") {
+			var interval = queryParams.englishTypingDuration || queryParams.hindiTypingDuration
+			startTime(interval , function callBack () {
+				startTime(interval);
+			});
+		}
+		typeline.addEventListener("input",function inputchange(event){
+			var message = document.getElementById("errormessage")
+			if (readline.value == event.target.value) {
+				message.innerText = "Text matched";
+				message.setAttribute("class", "text-blue");
+			} else if (!event.target.value || readline.value.indexOf(event.target.value) == 0) {
+				// there is no error
+				message.innerText = "";
+				message.setAttribute("class", "");
+			} else {
+				// there is no error
+				message.innerText = "Dont match"
+				message.setAttribute("class", "text-red");
+			}
+			
+		})
+
 
    </script>
+
 </body>
 </html>
+
+

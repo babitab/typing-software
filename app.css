@@ -259,3 +259,7 @@ input, textarea, select, button {
 	color: black;
 	font-size: 20px;
 }
+
+:lang(hindi) {
+	font-family: 'DevLys 010', sans-serif;
+}

@@ -96,7 +96,7 @@
     <div class="popup" id="popup1">
     	<div class="popup__backdrop js-backdrop"></div>
     	<div class="popup__content">
-		    <form action="index.html" method="get" class="settings-form bg-white p-30 rounded">
+		    <form action="#" method="get" class="settings-form bg-white p-30 rounded">
 		    	<button class="float-right rounded bg-white js-togglePopup" type="button" data-target="popup1">&times;</button>
 		      	<section>
 		   	   		<h2 class="m-0 mb-15">Typing Test Language</h2>
@@ -116,13 +116,10 @@
 		      		<th>English</th>
 		           </tr>
 		      		<tr>
-		      			<td colspan="2"> <label><input required type="radio" value="This is something about the data" checked name="selectedExercise"> 1</label></td>
+		      			<td colspan="2"> <label><input required type="radio" value="1" checked name="selectedExercise"> 1</label></td>
 		      		</tr>
 		      		<tr>
-		      			<td colspan="2"> <label><input required type="radio" value="And dome data to be written" name="selectedExercise"> 2</label></td>
-		      		</tr>
-		      		<tr>
-		      			<td colspan="2"> <label><input required type="radio" value="here is something for you to type3" name="selectedExercise"> 3</label></td>
+		      			<td colspan="2"> <label><input required type="radio" value="2" name="selectedExercise"> 2</label></td>
 		      		</tr>
 		      	</table>
 		      	<button type="submit" class="btn mu-10 js-togglePopup" data-target="popup1">Start Exam Now</button>
@@ -130,132 +127,66 @@
     	</div>
    </div>
   
-   		<div class="popup" id="popup2">
-    		<div class="popup__backdrop js-backdrop"></div>
-    		<div class="popup__content">
-    			
-				<div class="p-10">
-					<form action="./index.html" method="GET" class="settings-form bg-white p-30 rounded">
-						<button class="float-right rounded bg-white js-togglePopup" type="button" data-target="popup2">&times;</button>
-						<div class="d-flex justify-content-between">
-							<label class="profile-change">
-								<input type="file" name="profileImage" />
-								<img src="./user-img.png">
+	<div class="popup" id="popup2">
+	<div class="popup__backdrop js-backdrop"></div>
+	<div class="popup__content">
+		
+		<div class="p-10">
+			<form action="#" method="GET" class="settings-form bg-white p-30 rounded">
+				<button class="float-right rounded bg-white js-togglePopup" type="button" data-target="popup2">&times;</button>
+				<div class="d-flex justify-content-between">
+					<label class="profile-change">
+						<input type="file" name="profileImage" />
+						<img src="./user-img.png">
+					</label>
+				</div>
+				<section class="form-group">
+					<label>Roll No.</label>
+					<input type="number" name="rollNumber" placeholder="12734" required />
+				</section>
+				<section class="form-group">
+					<label>Name</label>
+					<input type="text" name="name" placeholder="First Last Name" required />
+				</section>
+				<section class="form-group">
+					<label>Father's Name</label>
+					<input type="text" name="fatherName" placeholder="First Last Name" />
+				</section>
+				<section class="form-group">
+					<label>Date of Birth</label>
+					<input type="date" name="dob" />
+				</section>
+			   	<section class="form-group">
+			   		<label>Exam  Duration</label>
+			   		<label class="d-block">Hindi Typing(min) <input type="number" required placeholder="15" name="hindiTypingDuration"></label>
+			   		<label class="d-block">English Typing(min) <input type="number" required placeholder="15" name="englishTypingDuration"></label>
+			   	</section>
+				<section>
+					<div class="form-group">
+						<label>Typing Test Language</label>
+						<div class="d-flex">
+							<label>
+								<input type="radio" name="language" value="Hindi" checked> Hindi
+							</label>
+							<label class="ml-5">
+								<input type="radio" name="language" value="English"> English
+							</label>
+							<label class="ml-5">
+								<input type="radio" name="language" value="Both">Both Hindi and English
 							</label>
 						</div>
-						<section class="form-group">
-							<label>Roll No.</label>
-							<input type="number" name="rollNumber" placeholder="12734" required />
-						</section>
-						<section class="form-group">
-							<label>Name</label>
-							<input type="text" name="name" placeholder="First Last Name" required />
-						</section>
-						<section class="form-group">
-							<label>Father's Name</label>
-							<input type="text" name="fatherName" placeholder="First Last Name" />
-						</section>
-						<section class="form-group">
-							<label>Date of Birth</label>
-							<input type="date" name="dob" />
-						</section>
-					   	<section class="form-group">
-					   		<label>Exam  Duration</label>
-					   		<label class="d-block">Hindi Typing(min) <input type="number" required placeholder="15" name="hindiTypingDuration"></label>
-					   		<label class="d-block">English Typing(min) <input type="number" required placeholder="15" name="englishTypingDuration"></label>
-					   	</section>
-						<section>
-							<div class="form-group">
-								<label>Typing Test Language</label>
-								<div class="d-flex">
-									<label>
-										<input type="radio" name="language" value="Hindi" checked> Hindi
-									</label>
-									<label class="ml-5">
-										<input type="radio" name="language" value="English"> English
-									</label>
-									<label class="ml-5">
-										<input type="radio" name="language" value="Both">Both Hindi and English
-									</label>
-								</div>
-							</div>
-							<div class="form-group">
-								<h4 class="ttl-heading">Disable Backspace Use</h4>
-								<input type="checkbox" name="disableBackSpace" value="1"> Disable Backspace use<br>
-							</div>
-						</section>
-						<button type="submit" class="btn mu-10 js-togglePopup" data-target="popup2">Settings</button>
-					</form> 
-				</div>
- 			</div>
- 		</div>
- 	<script>
-		function togglePopup (event) {
-			// get the id of the popup
-			var id = event.target.getAttribute("data-target");
-			var popup = document.getElementById(id);
-			popup.style.display = popup.style.display === "block" ? "none" : "block";
-			document.body.style.overflow = document.body.style.overflow === "hidden" ? "auto" : "hidden";
-		}
-		function startTime (duration, cb) {
-			duration = duration * 60;
-			document.getElementById("timeDuration").innerText = "00:" + Math.floor(duration/60) + ":" + duration % 60
-			var token = setInterval(function () {
-				duration--;
-				document.getElementById("timeDuration").innerText = "00:" + Math.floor(duration/60) + ":" + duration % 60
-				if (duration === 0) {
-					clearInterval(token);
-					alert("You time is over.");
-					if (cb) {
-						cb();
-					}
-				}
-			}, 1000)
-		}
-		// get the popup togglers: array of toggler
-		var popupTogglers = document.getElementsByClassName("js-togglePopup");
-		// attach event listener to popup toggle
-		for (var i = popupTogglers.length - 1; i >= 0; i--) {
-			var popupToggler = popupTogglers[i]
-			popupToggler.addEventListener("click", togglePopup)
-		}
-		var  readline = document.getElementById("read_line"), typeline = document.getElementById("type_line");
-		const queryParams = location.search.substring(1).split("&").map(function map(v) { return v.split("=") }).reduce(function reduce(retValue, arr) { retValue[decodeURIComponent(arr[0])] = decodeURIComponent(arr[1]); return retValue; }, {});
-		if (queryParams.selectedExercise) {
-			readline.value = queryParams.selectedExercise.replace(/\+/g, " ")
-		}
-		if (queryParams.selectedLanguage == "Hindi") {
-			startTime(queryParams.hindiTypingDuration);
-			
-		}
-		if (queryParams.selectedLanguage == "English") {
-			startTime(queryParams.englishTypingDuration)
-		}
-		if (queryParams.selectedLanguage == "Both") {
-			var interval = queryParams.englishTypingDuration || queryParams.hindiTypingDuration
-			startTime(interval , function callBack () {
-				startTime(interval);
-			});
-		}
-		typeline.addEventListener("input",function inputchange(event){
-			var message = document.getElementById("errormessage")
-			if (readline.value == event.target.value) {
-				message.innerText = "Text matched";
-				message.setAttribute("class", "text-blue");
-			} else if (!event.target.value || readline.value.indexOf(event.target.value) == 0) {
-				// there is no error
-				message.innerText = "";
-				message.setAttribute("class", "");
-			} else {
-				// there is no error
-				message.innerText = "Dont match"
-				message.setAttribute("class", "text-red");
-			}
-			
-		})
-
-
-   </script>
+					</div>
+					<div class="form-group">
+						<h4 class="ttl-heading">Disable Backspace Use</h4>
+						<input type="checkbox" name="disableBackSpace" value="1"> Disable Backspace use<br>
+					</div>
+				</section>
+				<button type="submit" class="btn mu-10 js-togglePopup" data-target="popup2">Settings</button>
+			</form> 
+		</div>
+		</div>
+	</div>
+ 	<script src="./app.js"></script>
 
 </body>
 </html>

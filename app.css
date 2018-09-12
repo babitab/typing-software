@@ -239,7 +239,6 @@ input, textarea, select, button {
 	width: 200px;
 	height: 200px;
 	border-radius: 50%;
-
 }
 .address{
 	max-width: 400px;
@@ -247,7 +246,6 @@ input, textarea, select, button {
     font-size: 30px;
     text-align: center;
     border: 1px solid skyblue;
-
 }
 .Name{
 	color: black;
